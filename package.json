@@ -1,0 +1,24 @@
+{
+  "name": "questionable_liger",
+  "version": "1.0.0",
+  "description": "Lodash modules converted using es2015",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fryymann715/questionable_liger.git"
+  },
+  "keywords": [
+    "npm",
+    "modules",
+    "es2015"
+  ],
+  "author": "questionable-liger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fryymann715/questionable_liger/issues"
+  },
+  "homepage": "https://github.com/fryymann715/questionable_liger#readme"
+}
