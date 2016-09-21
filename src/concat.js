@@ -8,7 +8,7 @@ const concat = (first, ...second) => {
 } else {
   result.push(first)
 }
-  console.log(result);
+
 if(second.constructor===Array){
   for(let j=0;j<second.length;j++){
     result.push(second[j])
@@ -16,7 +16,6 @@ if(second.constructor===Array){
 } else{
   result.push(second)
 }
-  console.log(result);
   return result
 }
 
