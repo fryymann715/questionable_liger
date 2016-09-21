@@ -1,6 +1,6 @@
 const join = require('../src/join.js')
 
-fdescribe('join', ()=> {
+describe('join', ()=> {
   it('joins an array into a string, with the second parameter in between each value', () => {
     expect(join(['h','e','l','l','o'])).toEqual('hello')
   })

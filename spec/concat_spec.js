@@ -1,6 +1,6 @@
 const concat = require('../src/concat.js')
 
-fdescribe('concat', ()=> {
+describe('concat', ()=> {
   it('returns a new array with the input values', () => {
     expect(concat([1,2,3], 2)).toEqual([1,2,3,2])
   })

@@ -1,6 +1,6 @@
 const reverse  = require('../src/reverse.js')
 
-fdescribe('reverse', ()=> {
+describe('reverse', ()=> {
   it('returns an array with the values in reverse', () => {
     expect(reverse([1,'b',3])).toEqual([ 3,'b',1])
   })
