@@ -10,7 +10,7 @@ const users = [ { 'user': 'barney' },
 
 const user = users[1]
 
-fdescribe( 'map', () => {
+describe( 'map', () => {
     it( 'performs a function on items within a collection', () => {
       expect( map( [ 4, 8 ], squareFunc) ).toEqual( [ 16, 64 ] )
     })
