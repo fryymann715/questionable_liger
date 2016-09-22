@@ -1,6 +1,6 @@
 const size = require('../src/size.js')
 
-fdescribe('size', ()=> {
+describe('size', ()=> {
 
   it('Gets the size of a collection by returning its length', () => {
     expect(size('four')).toEqual(4)
