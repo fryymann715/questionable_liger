@@ -1,12 +1,12 @@
 const truncate = require( "../src/truncate.js" )
 
-fdescribe( 'truncate', () => {
+describe( 'truncate', () => {
 
   const testString = "This is a string, for testing truncate."
 
   describe( 'Cut string based on options provided.', () => {
     it('when no options are given.', () => {
-      expect (truncate( testString )).toEqual( 'This is a string, for testing trunca...' )
+      expect(truncate( testString )).toEqual( 'This is a string, for testing trunca...' )
     })
   })
 
