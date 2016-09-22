@@ -1,6 +1,6 @@
 const replace=require('../src/replace.js')
 
-fdescribe('replace',()=>{
+describe('replace',()=>{
   it ('replaces a matched string or RegExp with a provided string',()=>{
     expect(replace('Hi Fred','Fred','Barney')).toEqual('Hi Barney')
     console.log(replace('Hi Fred','Fred','Barney'));

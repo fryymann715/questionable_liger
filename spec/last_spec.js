@@ -1,6 +1,6 @@
 const last=require('../src/last.js')
 
-fdescribe('last',()=>{
+describe('last',()=>{
   it('Gets the last element of an array',()=>{
     expect(last(['owl','octopus','otter'])).toEqual('otter')
   })
