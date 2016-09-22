@@ -1,6 +1,6 @@
 const inRange = require( '../src/inRange.js' )
 
-fdescribe( 'inRange', () => {
+describe( 'inRange', () => {
 
     describe( 'Returns true if number is within range ', () => {
       it( 'when a start and end are provided', () => {
