@@ -1,43 +1,92 @@
-const filter= require ('../src/filter.js')
+import filter from '../src/filter.js'
+
+const objectFilter = { 'age': 36, 'active': true }
 
 const users=[
-{ 'user': 'barney', 'age': 36, 'active': true },
-{ 'user': 'fred', 'age': 40, 'active': false }
+  Object.assign( {}, objectFilter, { 'user': 'barney' }),
+  { 'user': 'fred', 'age': 40, 'active': false }
 ]
-const barney={'user':'barney','age':36,'active':true}
+const barney = users[ 0 ]
+const fred = users[ 1 ]
 
-const num=[1,2,3,4]
+const numbers = [ 1, 2, 3, 4 ]
 
-fdescribe('filter',()=>{
-  it('filtering an array of objects based on a function', () =>{
-    expect(filter(users, (o) => {return !o.active})).toEqual([
-    { 'user': 'fred', 'age': 40, 'active': false }])
+describe( 'filter', () => {
+  it( 'returns undefined when collection is null', () => {
+    expect( filter( null, [] )).toEqual( undefined )
   })
 
-  it('filtering an object based on a function',()=>{
-    expect(filter(barney,(val) =>{return val.constructor===Number})).toEqual(['age',36])
+  it( 'returns undefined when collection is undefined', () => {
+    expect( filter( undefined, [] )).toEqual( undefined )
   })
 
-    it('filtering an array of objects for a subset of key:value pairs', () =>{
-      expect(filter(users, {'age':36,'active':true})).toEqual([{ 'user': 'barney', 'age': 36, 'active': true }])
+  describe( 'when receiving a function filter', () => {
+    it( 'correctly returns the filtered values', () => {
+      expect(filter( numbers, o => o > 2 )).toEqual([ 3, 4 ])
     })
 
-    it('filtering an array of objects using a function that checks key values',()=>{
-      expect(filter(users,(o)=>{return o.age>35})).toEqual([
-      { 'user': 'barney', 'age': 36, 'active': true },
-      { 'user': 'fred', 'age': 40, 'active': false }])
+    it( 'operates on an array of objects', () => {
+      const findInactive = object => !object.active
+
+      expect( filter( users, findInactive) ).toEqual([ fred ])
     })
 
+    it( 'operates on object, returning values', () => {
+      const findNumerical = value => typeof( value ) === 'number'
 
-    it('filtering an array of objects for a false key', () =>{
-      expect(filter(users, ['active',false])).toEqual([{ 'user': 'fred', 'age': 40, 'active': false }])
+      expect( filter( barney, findNumerical )).toEqual([ barney.age ])
     })
 
-    it('filtering an array of objects based on a key returning true', () =>{
-      expect(filter(users, 'active')).toEqual([{ 'user': 'barney', 'age': 36, 'active': true }])
+    describe( 'with an object', () => {
+      it( 'invokes predicate with value, key, and collection', () => {
+        const testObject = (() => {
+          let result = []
+
+          const filter = (value, key, collection) => {
+            result.push( `${value}-${key}-${collection[ key ]}` )
+          }
+
+          return { filter, result }
+        })()
+
+        filter({ a: 1, b: 2 }, testObject.filter )
+        expect( testObject.result ).toEqual([ '1-a-1', '2-b-2' ])
+      })
     })
 
-    it('filtering an array of numbers based on a function', () =>{
-      expect(filter(num, (o) => o > 2)).toEqual([3, 4])
+    describe( 'with an array', () => {
+      it( 'invokes predicate with value, index, and collection', () => {
+        const testObject = (() => {
+          let result = []
+
+          const filter = (value, index, collection) => {
+            result.push( `${value}-${index}-${collection[ index ]}` )
+          }
+
+          return { filter, result }
+        })()
+
+        filter([ 1, 2 ], testObject.filter )
+        expect( testObject.result ).toEqual([ '1-0-1', '2-1-2' ])
+      })
     })
+  })
+
+  describe( 'when receiving an object filter', () => {
+    it( 'finds objects with matching key value pairs', () => {
+      expect( filter( users, objectFilter )).toEqual([ barney ])
+    })
+  })
+
+  describe( 'when receiving a string filter', () => {
+      it( 'finds objects where the specified key is true', () => {
+        expect( filter( users, 'active' )).toEqual([ barney ])
+      })
+  })
+
+  describe( 'when receiving an array filter', () => {
+    it( 'treats entries as key value pairs to filter', () => {
+      expect( filter( users, [ 'active', false ])).toEqual([ fred ])
+    })
+  })
 })

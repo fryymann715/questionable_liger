@@ -1,6 +1,6 @@
 const difference=require('../src/difference.js')
 
-fdescribe('difference', ()=>{
+describe('difference', ()=>{
   it('returns an array containing values not found in given arrays',()=>{
     expect(difference([1,2,3],[3,4,5])).toEqual([1,2,4,5])
   })

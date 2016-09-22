@@ -1,6 +1,6 @@
 const camelCase=require('../src/camelCase.js')
 
-fdescribe('camelCase',()=>{
+describe('camelCase',()=>{
   it('Converts a string to camelCase',()=>{
     expect(camelCase('camel case')).toEqual('camelCase')
     console.log('camel case result '+camelCase('camel case'))
