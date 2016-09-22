@@ -23,10 +23,8 @@
     "url": "https://github.com/fryymann715/questionable_liger/issues"
   },
   "homepage": "https://github.com/fryymann715/questionable_liger#readme",
-  "dependencies": {
-    "jasmine": "^2.5.2"
-  },
   "devDependencies": {
-    "babel-preset-es2015": "^6.14.0"
+    "babel-preset-es2015": "^6.14.0",
+    "jasmine": "^2.5.2"
   }
 }
