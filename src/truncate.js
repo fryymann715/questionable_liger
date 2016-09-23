@@ -1,25 +1,21 @@
 
 
-const DEFAULT_LENGTH = 24
-
 const truncate = (string, options) => {
 
   let truncatedString = ""
 
-  // Options = null
   if ( options === undefined || options === null ) {
     return trimAtLength( string, string.length )
   }
   else {
     switch( typeof( options ) ) {
+      
       case 'object':
-      // Length is present without Separators
         if ( options[ 'length' ] != null && options[ 'separator' ] == null ) {
 
           let limit = getLimit( options )
           return trimAtLength( string, limit )
 
-      // Separator is present without Length
         }else if ( options[ 'separator' ] != null && options[ 'length' ] == null ) {
 
           let separatorArray = getSeparatorArray( options.separator )
@@ -42,7 +38,6 @@ const truncate = (string, options) => {
         break
 
       case 'string':
-      // Separators are supplied in a String
 
       let separatorArray = getSeparatorArray( options )
       let separatorIndex = getSeparatorIndex( string, separatorArray )
@@ -60,7 +55,6 @@ const truncate = (string, options) => {
 
 }
 
-// Get length
 const getLimit = limitObj => {
   return limitObj.length
 }
@@ -77,7 +71,6 @@ const trimAtSeparator = ( string, sepIndex ) => {
   return newString
 }
 
-// Get separators
 const getSeparatorArray = (separatorObj) => {
   let separatorArray = []
   for ( let i=0; i<separatorObj.length; i++ ) {
@@ -86,7 +79,6 @@ const getSeparatorArray = (separatorObj) => {
   return separatorArray
 }
 
-// Get Separator Index
 const getSeparatorIndex = ( string, sepArray ) => {
   for ( let sep=0; sep<sepArray.length; sep++ ) {
     for ( let i=0; i<string.length; i++ ) {
@@ -97,8 +89,6 @@ const getSeparatorIndex = ( string, sepArray ) => {
     }
   }
 
-
-// Does the separator occur in string befoere the length limit
 const isSeparatorFirst = ( separatorIndex, limit ) => {
   if ( separatorIndex < limit ) {
     return true
