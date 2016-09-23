@@ -20,6 +20,12 @@ This goal is important in learning JavaScript and understanding how high level d
 
     Returns
     (string): Returns the camel cased string. 	
+    
+    Examples
+    
+    .camelCase( 'Foo Bar' )
+    // => 'fooBar'
+    
 ###chunk(array, size=1)
     Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
 
@@ -29,6 +35,11 @@ This goal is important in learning JavaScript and understanding how high level d
 
     Returns
     (Array): Returns the new array of chunks.
+    
+    Example
+    
+    .chunk( ['a', 'b', 'c', 'd'], 2 )
+    // => [['a', 'b'], ['c', 'd']]
  	
 ###compact(array)
     Creates an array with all falsey values removed. The values false, null, 0, "", undefined, and NaN are falsey.
@@ -38,6 +49,11 @@ This goal is important in learning JavaScript and understanding how high level d
 
     Returns
     (Array): Returns the new array of filtered values.
+    
+    Example
+    
+    .compact( [0, 1, false, 2, '', 3] )
+    // => [1, 2, 3]
 
 ###concat(array, ...values)
     Creates a new array concatenating array with any additional arrays and/or values.
@@ -48,6 +64,14 @@ This goal is important in learning JavaScript and understanding how high level d
 
     Returns
     (Array): Returns the new concatenated array.
+    
+    Example
+    
+    let array = [1]
+    let other = .concat(array, 2, [3], [[4]])
+    
+    console.log(other)
+    // => [1, 2, 3, [4]]
  
 ###difference(array, values)
     Creates an array of array values not included in the other given arrays using SameValueZero for equality comparisons.   The order and references of result values are determined by the first array.
