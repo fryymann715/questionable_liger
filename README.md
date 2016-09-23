@@ -21,8 +21,7 @@ This goal is important in learning JavaScript and understanding how high level d
     Returns
     (string): Returns the camel cased string. 	
     
-    Examples
-    
+    Example
     .camelCase( 'Foo Bar' )
     // => 'fooBar'
     
@@ -37,7 +36,6 @@ This goal is important in learning JavaScript and understanding how high level d
     (Array): Returns the new array of chunks.
     
     Example
-    
     .chunk( ['a', 'b', 'c', 'd'], 2 )
     // => [['a', 'b'], ['c', 'd']]
  	
@@ -51,7 +49,6 @@ This goal is important in learning JavaScript and understanding how high level d
     (Array): Returns the new array of filtered values.
     
     Example
-    
     .compact( [0, 1, false, 2, '', 3] )
     // => [1, 2, 3]
 
@@ -66,10 +63,8 @@ This goal is important in learning JavaScript and understanding how high level d
     (Array): Returns the new concatenated array.
     
     Example
-    
     let array = [1]
     let other = .concat(array, 2, [3], [[4]])
-    
     console.log(other)
     // => [1, 2, 3, [4]]
  
