@@ -17,4 +17,13 @@ describe('camelCase',()=>{
     expect(camelCase('Camel_Case')).toEqual('camelCase')
     console.log('Camel_Case result '+camelCase('Camel_Case'))
   })
+
+  it('Converts a string to camelCase',()=>{
+    expect(camelCase('CAMEL_CASE')).toEqual('camelCase')
+    console.log('CAMEL_CASE result '+camelCase('CAMEL_CASE'))
+  })
+  it('Converts improper capitalization',()=>{
+    expect(camelCase('camelCASE')).toEqual('camelCase')
+    console.log('camelCASE result '+camelCase('camelCASE'))
+  })
 })
