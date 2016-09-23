@@ -4,6 +4,7 @@
   "description": "Lodash modules converted using es2015",
   "main": "index.js",
   "scripts": {
+    "build": "babel src -d lib",
     "test": "babel-watch spec/run.js",
     "dev": "nodemon dist/index.js",
     "start": "node dist/index.js"
