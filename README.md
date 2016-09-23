@@ -14,17 +14,17 @@ This goal is important in learning JavaScript and understanding how high level d
 
 ###camelCase(string='')
     Converts a string to camel case.
-  
+
     Arguments
     [string=''] (string): The string to convert.
 
     Returns
     (string): Returns the camel cased string. 	
-    
+
     Example
     .camelCase( 'Foo Bar' )
     // => 'fooBar'
-    
+
 ###chunk(array, size=1)
     Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
 
@@ -34,11 +34,11 @@ This goal is important in learning JavaScript and understanding how high level d
 
     Returns
     (Array): Returns the new array of chunks.
-    
+
     Example
     .chunk( ['a', 'b', 'c', 'd'], 2 )
     // => [['a', 'b'], ['c', 'd']]
- 	
+
 ###compact(array)
     Creates an array with all falsey values removed. The values false, null, 0, "", undefined, and NaN are falsey.
 
@@ -47,7 +47,7 @@ This goal is important in learning JavaScript and understanding how high level d
 
     Returns
     (Array): Returns the new array of filtered values.
-    
+
     Example
     .compact( [0, 1, false, 2, '', 3] )
     // => [1, 2, 3]
@@ -61,13 +61,13 @@ This goal is important in learning JavaScript and understanding how high level d
 
     Returns
     (Array): Returns the new concatenated array.
-    
+
     Example
     let array = [1]
     let other = .concat(array, 2, [3], [[4]])
     console.log(other)
     // => [1, 2, 3, [4]]
- 
+
 ###difference(array, values)
     Creates an array of array values not included in the other given arrays using SameValueZero for equality comparisons.   The order and references of result values are determined by the first array.
 
@@ -106,7 +106,7 @@ This goal is important in learning JavaScript and understanding how high level d
 
     Returns
     (Function): Returns the new flipped function.
-	
+
 ###fromPairs(pairs)
     This method returns an object composed from key-value pairs.
 
@@ -115,7 +115,7 @@ This goal is important in learning JavaScript and understanding how high level d
 
     Returns
     (Object): Returns the new object.
-	
+
 ###inRange(number, start=0, end)
     Checks if n is between start and up to, but not including, end. If end is not specified, it's set to start with start then set to 0. If start is greater than end the params are swapped to support negative ranges.
 
@@ -126,7 +126,7 @@ This goal is important in learning JavaScript and understanding how high level d
 
     Returns
     (boolean): Returns true if number is in the range, else false.
-	
+
 ###indexOf(array, value, fromIndex=0)
     Gets the index at which the first occurrence of value is found in array using SameValueZero for equality comparisons. If  fromIndex is negative, it's used as the offset from the end of array.
 
@@ -137,7 +137,7 @@ This goal is important in learning JavaScript and understanding how high level d
 
     Returns
     (number): Returns the index of the matched value, else -1.
-	
+
 ###join(array, separator=',')
     Converts all elements in array into a string separated by separator.
 
@@ -147,7 +147,7 @@ This goal is important in learning JavaScript and understanding how high level d
 
     Returns
     (string): Returns the joined string.
-	
+
 ###last(array)
     Gets the last element of array.
 
@@ -172,7 +172,7 @@ This goal is important in learning JavaScript and understanding how high level d
 
     Arguments
     array (Array): The array to iterate over.
-  
+
     Returns
     (number): Returns the mean.
 
@@ -188,7 +188,7 @@ This goal is important in learning JavaScript and understanding how high level d
 
 ###omit(object, ...props)
     This method creates an object composed of the own and inherited enumerable string keyed properties of object that are not omitted.
-    
+
     Arguments
     object (Object): The source object.
     [props] (...(string|string[])): The property identifiers to omit.
@@ -291,9 +291,9 @@ This goal is important in learning JavaScript and understanding how high level d
 # Specifications
 
 - [X] Write functions in ES6.
-- [ ] Create a ReadMe that describes each method and provides an example of use. 
+- [X] Create a ReadMe that describes each method and provides an example of use. 
 - [X] Publish package to NPM: <a href="https://www.npmjs.com/package/questionable_liger"> Click here to download package</a>
-- [X] Complete 7 commonly used functions from the LoDash library 
+- [X] Complete 7 commonly used functions from the LoDash library
 - [X] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
 
 ---
