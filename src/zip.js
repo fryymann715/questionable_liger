@@ -2,15 +2,8 @@ const zip = (...arrays) => {
   const result = []
   const max = maxLength(arrays)
 
-  // for(let index = 1; index < arrays.length; index++){
-  //   if (arrays[index].length > max){
-  //     max = arrays[index].length
-  //   }
-  // }
-
-
   for(let index = 0; index < max; index++){
-    console.log(max);
+
     let temp = []
 
 
@@ -26,7 +19,7 @@ const zip = (...arrays) => {
  }
 
 const maxLength = (arrays) =>{
-  let max = arrays[0].length || 0 
+  let max = arrays[0].length || 0
   for(let index = 1; index < arrays.length; index++){
     if (arrays[index].length > max){
       console.log('max= ',max);

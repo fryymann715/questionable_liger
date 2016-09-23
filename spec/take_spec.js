@@ -1,6 +1,6 @@
 const take = require ('../src/take.js')
 
-fdescribe('take',() => {
+describe('take',() => {
   it('returns the first n values from array',()=>{
     expect(take([1,2,3],2)).toEqual([1,2])
   })
