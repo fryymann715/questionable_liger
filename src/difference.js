@@ -13,7 +13,7 @@ const difference = (arr1, ...values) => {
 }
 return match
 }
-for(var i=0;i<values.length;i++){
+for(let i=0;i<values.length;i++){
   if(values[i].constructor===Array){
 
         for(let k=0;k<arr1.length;k++){
