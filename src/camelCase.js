@@ -6,7 +6,6 @@ stringArray.push(string[0])
     for(let i=1;i<string.length;i++){
       if(string[i]===string[i].toUpperCase()){
         if(string[i-1]===string[i-1].toLowerCase()){
-          console.log('pushing '+ 'space' +string[i])
             stringArray.push(' '+string[i])
         } else {
           stringArray.push(string[i])
